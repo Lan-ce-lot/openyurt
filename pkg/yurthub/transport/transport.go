@@ -134,6 +134,7 @@ func (tm *transportManager) start() {
 			tm.closeAll()
 			lastCert = curr
 		} else if lastCert != nil && curr != nil {
+			//nolint:staticcheck
 			if lastCert == curr {
 				// cert is not rotate, just wait
 			} else {
@@ -142,7 +143,8 @@ func (tm *transportManager) start() {
 				tm.closeAll()
 				lastCert = curr
 			}
-		} else {
+		} else { //nolint:staticcheck
+
 			// lastCet != nil && curr == nil
 			// certificate expired or deleted unintentionally, just wait for cert updated by bootstrap config, do nothing
 		}

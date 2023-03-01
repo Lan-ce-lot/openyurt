@@ -66,6 +66,7 @@ func TestGetResponse(t *testing.T) {
 		t.Errorf("get response failed")
 	}
 
+	//nolint:staticcheck
 	if diffBytes(rbytes, wbytes) {
 		//t.Errorf("raw bytes is not equal\n")
 	}

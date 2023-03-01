@@ -73,6 +73,7 @@ func (m *NetworkManager) Run(stopCh <-chan struct{}) {
 				}
 				return
 			case <-ticker.C:
+				//nolint:staticcheck
 				if err := m.configureNetwork(); err != nil {
 					// do nothing here
 				}

@@ -128,6 +128,7 @@ func NewIptablesManagerWithIPFamily(client clientset.Interface,
 	conntrackPath, err := im.execer.LookPath("conntrack")
 	if err != nil {
 		klog.Errorf("error looking for path of conntrack: %v", err)
+		return nil
 	} else {
 		im.conntrackPath = conntrackPath
 	}

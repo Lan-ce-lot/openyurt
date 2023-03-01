@@ -35,6 +35,7 @@ import (
 )
 
 type PoolScopeResourcesManger struct {
+	//nolint:unused
 	factory                      informers.SharedInformerFactory
 	validPoolScopedResources     map[string]*verifiablePoolScopeResource
 	validPoolScopedResourcesLock sync.RWMutex
